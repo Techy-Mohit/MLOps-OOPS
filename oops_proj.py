@@ -18,9 +18,9 @@ class chatbook:
         elif user_input == '2':
             self.signin()
         elif user_input == '3':
-            pass
+            self.write_post()
         elif user_input == '4':
-            pass
+            self.message_friend()
         else:
             exit()
     def signup(self):
@@ -45,4 +45,23 @@ class chatbook:
                 print("Invalid credentials, please try again.")
         print("\n")
         self.menu()
-obj = chatbook()
+        
+    def write_post(self):
+        if self.loggedin:
+           txt = input("Write your post: ")
+           print(f"Post published: {txt}")
+        else:
+            print("please signin to write a post")
+        print("\n")
+        self.menu()
+    
+    def message_friend(self):
+        if self.loggedin:
+            friend = input("Enter your friend's name: ")
+            msg = input("Enter your message: ")
+            print(f"Message sent to {friend}: {msg}")
+        else:
+            print("please signin to write a message to your friend")
+        print("\n")
+        self.menu()
+# obj = chatbook()

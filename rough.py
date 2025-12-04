@@ -1,3 +1,4 @@
+from oops_proj import chatbook
 lst = [1,2,3]
 my_str = "mlops"
 my_list = 155
@@ -5,3 +6,5 @@ my_list = 155
 print(type(lst))
 print(type(my_str))
 print(type(my_list))
+
+user1 = chatbook()
