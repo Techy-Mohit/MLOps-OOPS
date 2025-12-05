@@ -1,10 +1,21 @@
 class chatbook:
+    __user_id = 1 # Static/Class Variable
     def __init__(self):
+        self.id = chatbook.__user_id
+        chatbook.__user_id += 1
+        self.__name = "Default User"
         self.username = ''
         self.password = ''
         self.loggedin = False
-        self.menu()
+        # self.menu()
         
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    
+    @staticmethod
+    def set_id(value):
+        chatbook.__user_id = value
     def menu(self):
         user_input = input("""welcome to Chatbook  !!  How would you like to proceed?
                            1. Press 1 to signup
@@ -64,4 +75,8 @@ class chatbook:
             print("please signin to write a message to your friend")
         print("\n")
         self.menu()
+    def get_name(self):
+        return self.__name
+    def set_name(self,value):
+        self.__name = value
 # obj = chatbook()

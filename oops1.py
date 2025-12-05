@@ -2,6 +2,7 @@
 class Employee:
     #  special method/magic method/dunder method - constructor
     def __init__(self):
+        print(id(self))
         self.id = 123
         self.salary = 50000
         self.designation = "SDE"
@@ -9,7 +10,10 @@ class Employee:
         print(f"Employee is now travelling to {destination}")
 # create an object/instance of the class
 sam = Employee()
+sam.title = "Manik"
+
 print(sam.designation)
 sam.travel("New york")
 
 print(type(sam))
+print(id(sam))
